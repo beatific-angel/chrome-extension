@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <!-- Title -->
+    <meta charset="utf-8" />
+    <title>Shixiong Supplier</title>
+
+    <!-- Imports -->
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+    <script src="js/popup.js"></script>
+
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+
+<!-- Body -->
+
+
+<body style="width:400px;">
+<!-- Accent-colored raised button with ripple -->
+
+<nav class="blue darken-3">
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo center">Shixiong Supplier</a>
+    </div>
+</nav>
+<!-- NAV END -->
+<div class="row noMargin noPadding">
+    <div id="div_orderlist" class="orderlist s12">
+        <table class="no-border">
+            <thead>
+            <tr>
+                <th colspan="2" style="width: 70%;">
+                        <label>
+                            <input type="checkbox" id="chk_select_all"/>
+                            <span></span>
+                        </label>
+                        <a class="btn-flat btn-small disabled" id="pagination_first"><i class="material-icons">first_page</i></a>
+                        <a class="btn-flat btn-small disabled" id="pagination_prev"><i class="material-icons">chevron_left</i></a>
+                        <a class="btn-flat btn-small disabled" id="pagination_next"><i class="material-icons">chevron_right</i></a>
+                        <a class="btn-flat btn-small disabled" id="pagination_last"><i class="material-icons">last_page</i></a>
+                </th>
+                <th colspan="2">
+                    <button class="btn waves-effect waves-light" type="submit" name="action" id="btn_import">
+                        导入<i class="material-icons right">cloud_upload</i>
+                    </button>
+                </th>
+            </tr>
+            <tr>
+                <th colspan="2">宝贝</th>
+                <th style="width: 10%;">数量</th>
+                <th style="width: 20%;">实付款</th>
+            </tr>
+            </thead>
+            <tbody id="tbody_orders">
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="row center-align" id="div_preloader">
+    <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue-only">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div><div class="gap-patch">
+            <div class="circle"></div>
+        </div><div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

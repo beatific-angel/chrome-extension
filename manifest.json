@@ -1,0 +1,53 @@
+{
+    "author": "shixiong",
+    "description": "Catch order from shopping mall.",
+    "version": "2.0",
+    "background": { "scripts": ["js/background.js"] },
+    "content_scripts": [
+        {
+            "js": [ "js/content-product-tmall.js" ],
+            "matches":["http://detail.tmall.com/item.htm*", "https://detail.tmall.com/item.htm*"],
+            "run_at": "document_start"
+        },
+        {
+            "js": [ "js/content-product-taobao.js" ],
+            "matches":["http://item.taobao.com/item.htm*", "https://item.taobao.com/item.htm*"],
+            "run_at": "document_end"
+        },
+        {
+            "js": [ "js/content-product-1688.js" ],
+            "matches":["http://detail.1688.com/*", "https://detail.1688.com/*"],
+            "run_at": "document_end"
+        },
+        {
+            "js": [ "js/content-order-taobao.js" ],
+            "matches":["http://buyertrade.taobao.com/trade/itemlist/list_bought_items.htm*", "https://buyertrade.taobao.com/trade/itemlist/list_bought_items.htm*"],
+            "run_at": "document_start"
+        },
+        {
+            "js": ["js/content-sub-order-1688.js"],
+            "matches": ["http://trade.1688.com/order/buyer_order_list.htm*", "https://trade.1688.com/order/buyer_order_list.htm*"],
+            "all_frames":true
+        }
+    ],
+    "permissions": [ "activeTab", "storage", "cookies", "webNavigation", "tabs", "http://*/*", "https://*/*", "background" ],
+    "browser_action": {
+        "default_icon": "img/icon-48.png",
+        "default_popup": "popup.html"
+    },
+    "icons": {
+        "16": "img/icon-16.png",
+        "48": "img/icon-48.png",
+        "128": "img/icon-128.png"
+    },
+    "manifest_version": 2,
+    "name": "Shixiong Supplier",
+    "options_page": "options.html",
+    "web_accessible_resources": [
+        "js/jquery.min.js", "js/popup.js", "js/options.js", "js/materialize.min.js",
+        "js/page-order-taobao.js",
+        "js/page-product-taobao.js", "js/page-product-tmall.js", "js/page-product-1688.js",
+        "js/page-on-completed-order-taobao.js",
+        "js/zepto.js"
+    ]
+}
